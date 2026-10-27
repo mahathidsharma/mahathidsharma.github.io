@@ -1,0 +1,125 @@
+media:
+  - name: images
+    label: Images
+    input: assets/img
+    output: /assets/img
+    extensions: [jpg, jpeg, png, webp]
+  - name: pdf
+    label: Documents
+    input: assets/pdf
+    output: /assets/pdf
+    extensions: [pdf]
+
+content:
+  - name: about
+    label: Home page (bio, photo)
+    type: file
+    path: _pages/about.md
+    format: yaml-frontmatter
+    fields:
+      - name: subtitle
+        label: Subtitle under my name (can contain links)
+        type: string
+      - name: profile
+        label: Profile photo
+        type: object
+        fields:
+          - name: image
+            label: Photo file name (upload the photo under Media first)
+            type: string
+          - name: more_info
+            label: Text under the photo
+            type: text
+      - name: body
+        label: About me
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: news
+    label: News (short updates)
+    type: collection
+    path: _news
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      sort: [date]
+      order: desc
+      fields: [date]
+    fields:
+      - name: date
+        label: Date
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: layout
+        type: string
+        hidden: true
+        default: post
+      - name: inline
+        type: boolean
+        hidden: true
+        default: true
+      - name: related_posts
+        type: boolean
+        hidden: true
+        default: false
+      - name: body
+        label: What happened (one or two sentences)
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [category]
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: page
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: One-line description
+        type: string
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - { value: current, label: Current }
+            - { value: past, label: Past }
+      - name: importance
+        label: Order within category (1 shows first)
+        type: number
+      - name: body
+        label: Details
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: publications
+    label: Publications (BibTeX)
+    type: file
+    path: _bibliography/papers.bib
+    format: code
+
+  - name: cv
+    label: CV page content
+    type: file
+    path: _data/cv.yml
+    format: code
+
+  - name: socials
+    label: Email and social links
+    type: file
+    path: _data/socials.yml
+    format: code
