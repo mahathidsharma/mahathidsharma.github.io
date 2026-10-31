@@ -17,6 +17,15 @@ content:
     path: _pages/about.md
     format: yaml-frontmatter
     fields:
+      - name: layout
+        type: string
+        hidden: true
+      - name: title
+        type: string
+        hidden: true
+      - name: permalink
+        type: string
+        hidden: true
       - name: subtitle
         label: Subtitle under my name (can contain links)
         type: string
@@ -24,12 +33,40 @@ content:
         label: Profile photo
         type: object
         fields:
+          - name: align
+            type: string
+            hidden: true
           - name: image
             label: Photo file name (upload the photo under Media first)
             type: string
+          - name: image_circular
+            type: boolean
+            hidden: true
           - name: more_info
             label: Text under the photo
             type: text
+      - name: selected_papers
+        type: boolean
+        hidden: true
+      - name: social
+        type: boolean
+        hidden: true
+      - name: announcements
+        type: object
+        hidden: true
+        fields:
+          - name: enabled
+            type: boolean
+          - name: scrollable
+            type: boolean
+          - name: limit
+            type: number
+      - name: latest_posts
+        type: object
+        hidden: true
+        fields:
+          - name: enabled
+            type: boolean
       - name: body
         label: About me
         type: rich-text
@@ -100,6 +137,9 @@ content:
       - name: importance
         label: Order within category (1 shows first)
         type: number
+      - name: related_publications
+        type: boolean
+        hidden: true
       - name: body
         label: Details
         type: rich-text
