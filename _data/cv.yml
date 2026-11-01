@@ -41,7 +41,7 @@ cv:
           - Optimized SOPs for qPCR and RT-qPCR to estimate viral titers of Baculovirus and Rhabdovirus.
 
       - company: CSIR – Institute of Genomics and Integrative Biology (IGIB)
-        position: Project Associate (In-charge of Sequencing Facility)
+        position: Project Associate (In-charge of sequencing facility)
         location: New Delhi, India
         start_date: 2023-07
         end_date: 2023-11
@@ -145,3 +145,37 @@ cv:
         summary: "A2 (Goethe-Zertifikat, Jul 2026)"
       - name: French
         summary: "A1"
+
+    Volunteer:
+      - company: Rotaract Club of Deonar
+        position: Director of Community Service and Joint Director of Partners-in-Service
+        location: Mumbai, India
+        start_date: 2020-07
+        end_date: 2021-06
+        highlights:
+          - Organized on-ground blood donation camps during the first wave of Covid-19.
+          - Organized monthly donation drives of essentials and groceries for Maranatha Harvest Mission Orphanage and Bal Anand WorldChildren Welfare Trust.
+
+      - company: U&I Trust
+        position: Teacher
+        location: Mumbai, India
+        start_date: 2019-06
+        end_date: 2020-03
+        highlights:
+          - Taught grade-level English to children at Our Lady's Home, Dadar, a shelter for orphaned and destitute children.
+
+      - company: Independent
+        position: Scribe for people with disabilities
+        location: Mumbai and Coimbatore, India
+        start_date: 2018-03
+        end_date: present
+        highlights:
+          - Writer for individuals who are visually and/or physically impacted.
+
+      - company: Independent
+        position: Lifetime O-negative blood donor
+        location: Mumbai and Bengaluru, India
+        start_date: 2015-03
+        end_date: present
+        highlights:
+          - 21 donations to date.

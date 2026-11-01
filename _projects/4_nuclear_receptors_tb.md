@@ -2,8 +2,7 @@
 layout: page
 title: Nuclear receptors in tuberculosis
 description: Host nuclear receptors as targets for host-directed therapy (CSIR-IMTech)
-importance: 1
-category: past
+importance: 4
 related_publications: true
 ---
 

@@ -2,8 +2,7 @@
 layout: page
 title: Phenome India gut microbiome
 description: Sample processing and sequencing for the CSIR Health cohort at IGIB
-importance: 2
-category: past
+importance: 3
 ---
 
 **Project Associate, CSIR-Institute of Genomics and Integrative Biology (IGIB), New Delhi · Jul 2023 – Nov 2023**

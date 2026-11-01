@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Research Assistant at the <a href='https://iisc.ac.in/'>Indian Institute of Science (IISc)</a>, Bengaluru
 

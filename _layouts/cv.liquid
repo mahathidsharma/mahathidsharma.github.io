@@ -1,0 +1,153 @@
+---
+layout: default
+---
+{% assign cv = site.data.cv.cv %}
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">
+      {{ cv.label }}{% if cv.location %} · {{ cv.location }}{% endif %}
+      {% if cv.email %}· <a href="mailto:{{ cv.email }}">{{ cv.email }}</a>{% endif %}
+    </p>
+    {% if page.cv_pdf %}
+      <a class="cv-download" href="{{ page.cv_pdf | relative_url }}" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-file-pdf"></i> Download PDF
+      </a>
+    {% endif %}
+  </header>
+
+  <article class="cv-simple">
+    {% if cv.summary %}
+      <p class="cv-summary">{{ cv.summary }}</p>
+    {% endif %}
+
+    <!-- Experience -->
+    {% assign items = cv.sections.Experience %}
+    {% if items %}
+      <section>
+        <h2>Experience</h2>
+        {% for entry in items %}
+          <div class="cv-entry">
+            <div class="cv-when">{% include cv_dates.liquid start=entry.start_date end=entry.end_date %}</div>
+            <div class="cv-what">
+              <div class="cv-role">{{ entry.position }}</div>
+              <div class="cv-org">{{ entry.company }}{% if entry.location %} · {{ entry.location }}{% endif %}</div>
+              {% if entry.summary %}
+                <p class="cv-note">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+              {% endif %}
+              {% if entry.highlights %}
+                <ul>
+                  {% for item in entry.highlights %}
+                    <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    <!-- Education -->
+    {% assign items = cv.sections.Education %}
+    {% if items %}
+      <section>
+        <h2>Education</h2>
+        {% for entry in items %}
+          <div class="cv-entry">
+            <div class="cv-when">{% include cv_dates.liquid start=entry.start_date end=entry.end_date %}</div>
+            <div class="cv-what">
+              <div class="cv-role">{{ entry.studyType }}{% if entry.area %}, {{ entry.area }}{% endif %}</div>
+              <div class="cv-org">{{ entry.institution }}{% if entry.location %} · {{ entry.location }}{% endif %}</div>
+              {% if entry.score %}
+                <p class="cv-note">Grade: {{ entry.score }}</p>
+              {% endif %}
+              {% if entry.courses %}
+                <p class="cv-note">Courses: {{ entry.courses }}</p>
+              {% endif %}
+              {% if entry.highlights %}
+                <ul>
+                  {% for item in entry.highlights %}
+                    <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    <!-- Publications -->
+    {% assign items = cv.sections.Publications %}
+    {% if items %}
+      <section>
+        <h2>Publications</h2>
+        {% for entry in items %}
+          <div class="cv-entry">
+            <div class="cv-when">{{ entry.releaseDate | date: '%b %Y' }}</div>
+            <div class="cv-what">
+              <div class="cv-role">
+                {% if entry.url %}<a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry.title }}</a>{% else %}{{ entry.title }}{% endif %}
+              </div>
+              <div class="cv-org">{{ entry.authors | join: ', ' }}</div>
+              <div class="cv-org"><em>{{ entry.publisher }}</em></div>
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    <!-- Skills -->
+    {% assign items = cv.sections.Skills %}
+    {% if items %}
+      <section>
+        <h2>Skills</h2>
+        {% for entry in items %}
+          <div class="cv-entry">
+            <div class="cv-when cv-label">{{ entry.name }}</div>
+            <div class="cv-what">{{ entry.keywords }}</div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    <!-- Languages -->
+    {% assign items = cv.sections.Languages %}
+    {% if items %}
+      <section>
+        <h2>Languages</h2>
+        {% for entry in items %}
+          <div class="cv-entry">
+            <div class="cv-when cv-label">{{ entry.name }}</div>
+            <div class="cv-what">{{ entry.summary }}</div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    <!-- Volunteering -->
+    {% assign items = cv.sections.Volunteer %}
+    {% if items %}
+      <section>
+        <h2>Volunteering</h2>
+        {% for entry in items %}
+          <div class="cv-entry">
+            <div class="cv-when">{% include cv_dates.liquid start=entry.start_date end=entry.end_date %}</div>
+            <div class="cv-what">
+              <div class="cv-role">{{ entry.position }}</div>
+              <div class="cv-org">{{ entry.company }}{% if entry.location %} · {{ entry.location }}{% endif %}</div>
+              {% if entry.highlights %}
+                <ul>
+                  {% for item in entry.highlights %}
+                    <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+  </article>
+</div>

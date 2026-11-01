@@ -1,0 +1,24 @@
+{%- comment -%}
+  Prints a date range such as "Jan 2026 – Present".
+  Usage: include this file with start and end parameters.
+  Dates can be written as 2026-01 (month and year) or 2026 (year only).
+{%- endcomment -%}
+{%- assign s = include.start | append: '' -%}
+{%- assign e = include.end | append: '' -%}
+{%- if s.size == 7 -%}
+  {%- assign s_text = s | append: '-01' | date: '%b %Y' -%}
+{%- else -%}
+  {%- assign s_text = s -%}
+{%- endif -%}
+{%- if e == 'present' or e == 'Present' or e == '' -%}
+  {%- assign e_text = 'Present' -%}
+{%- elsif e.size == 7 -%}
+  {%- assign e_text = e | append: '-01' | date: '%b %Y' -%}
+{%- else -%}
+  {%- assign e_text = e -%}
+{%- endif -%}
+{%- if s_text == e_text -%}
+  {{- s_text -}}
+{%- else -%}
+  {{- s_text }} – {{ e_text -}}
+{%- endif -%}

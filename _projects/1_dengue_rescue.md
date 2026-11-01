@@ -3,7 +3,6 @@ layout: page
 title: Dengue virus rescue
 description: Rescuing infectious Dengue virus from the pFK-DV plasmid
 importance: 1
-category: current
 ---
 
 **Research Assistant, Indian Institute of Science (IISc), Bengaluru · Jan 2026 – present**

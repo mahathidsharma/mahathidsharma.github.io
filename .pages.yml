@@ -65,7 +65,7 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      fields: [category]
+      fields: [importance]
     fields:
       - name: layout
         type: string
@@ -78,15 +78,8 @@ content:
       - name: description
         label: One-line description
         type: string
-      - name: category
-        label: Category
-        type: select
-        options:
-          values:
-            - { value: current, label: Current }
-            - { value: past, label: Past }
       - name: importance
-        label: Order within category (1 shows first)
+        label: Position on the Projects page (1 shows first)
         type: number
       - name: related_publications
         type: boolean

@@ -2,8 +2,7 @@
 layout: page
 title: Influenza and RSV vaccine studies
 description: Preclinical efficacy studies and assay development at Mynvax
-importance: 1
-category: past
+importance: 2
 ---
 
 **Research Associate, Mynvax Private Limited, Bengaluru · Dec 2023 – Nov 2025**

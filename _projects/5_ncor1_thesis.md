@@ -2,8 +2,7 @@
 layout: page
 title: NCoR1 and mitochondrial function in TB
 description: M.Tech thesis at BRIC-Institute of Life Sciences
-importance: 2
-category: past
+importance: 5
 ---
 
 **Project Trainee, BRIC-Institute of Life Sciences (ILS), Bhubaneswar · Jan – Jul 2022**
