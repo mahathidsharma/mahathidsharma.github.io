@@ -3,7 +3,7 @@
 # More options: https://github.com/george-gca/jekyll-socials
 cv_pdf: /assets/pdf/Mahathi_CV.pdf # path to the CV PDF file
 email: mahathisharmaa@gmail.com # email address
-# linkedin_username: # the part after linkedin.com/in/ , e.g. mahathi-sharma
+linkedin_username: mahathidsharma # the part after linkedin.com/in/
 # orcid_id: # e.g. 0000-0000-0000-0000
 # scholar_userid: # Google Scholar ID (the "user=" part of your Scholar profile URL)
 # researchgate_profile: # the part after researchgate.net/profile/
